@@ -22,4 +22,4 @@ abline(proc.ram.lm, lwd=2, col="red")
 ram.proc.lm <- lm(ram ~ processos_ativos, data = ndados.hw)
 summary(ram.proc.lm)
 
-predict(ram.proc.lm, newdata = data.frame(processos_ativos = c(300)))
+predict(ram.proc.lm, newdata = data.frame(processos_ativos = c(350)))

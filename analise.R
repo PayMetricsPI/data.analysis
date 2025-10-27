@@ -96,7 +96,6 @@ plot(dia.especifico.cod003$datetime,
 
 # analisar por maquina ----------------------------------------------------
 
-
 # cpu
 dados.hw.piv <- pivot_longer(ndados.hw, 
                              cols = c("cpu", "ram", "disco", "mb_enviados", "mb_recebidos", "processos_ativos"),
@@ -192,7 +191,7 @@ ggplot(mapping = aes(dados.hw.piv$codigo_maquina[dados.hw.piv$tipo_medicao == "p
 
 # analisar metricas -------------------------------------------------------
 
-q92.cpu <- quantile(ndados.hw$cpu, 0.92, na.rm = TRUE)
+q92.cpu <- quantile(ndados.hw$cpu, 0.99, na.rm = TRUE)
 q92.cpu # 70.25752
 hist(ndados.hw$cpu)
 
@@ -231,3 +230,4 @@ hist(ndados.hw$mb_enviados)
 q95.mb_recebidos <- quantile(ndados.hw.100$mb_recebidos, 0.95, na.rm = TRUE)
 q95.mb_recebidos # 5.8297
 hist(ndados.hw$mb_recebidos)
+
